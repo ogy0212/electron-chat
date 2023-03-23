@@ -1,0 +1,14 @@
+{
+  "name": "electron-chat",
+  "version": "1.0.0",
+  "description": "An Electron app that displays https://chat.openai.com/chat",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^15.3.0",
+    "electron-builder": "^23.6.0"
+  }
+}
