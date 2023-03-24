@@ -31,6 +31,8 @@ app.whenReady().then(() => {
   globalShortcut.register(shortcut, () => {
     if (!mainWindow) {
       mainWindow = createWindow(); // mainWindowがnullの場合、再作成する
+    } else if (mainWindow.isMinimized()) { // ウィンドウが最小化されている場合
+      mainWindow.restore(); // 最小化から復元する
     } else if (mainWindow.isVisible()) {
       mainWindow.hide();
     } else {
