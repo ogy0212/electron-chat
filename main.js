@@ -27,7 +27,7 @@ app.whenReady().then(() => {
   mainWindow = createWindow();
 
   // Command+Shift+Kでウィンドウを表示・非表示
-  const shortcut = process.platform === 'darwin' ? 'Command+Shift+K' : 'Ctrl+Shift+K';
+  const shortcut = process.platform === 'darwin' ? 'Command+Shift+D' : 'Ctrl+Shift+D';
   globalShortcut.register(shortcut, () => {
     if (!mainWindow) {
       mainWindow = createWindow(); // mainWindowがnullの場合、再作成する
@@ -37,6 +37,7 @@ app.whenReady().then(() => {
       mainWindow.hide();
     } else {
       mainWindow.show();
+      mainWindow.focus(); // ウィンドウにフォーカスを強制的に与える
     }
   });
 });
